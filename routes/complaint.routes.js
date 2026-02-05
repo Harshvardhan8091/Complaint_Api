@@ -12,7 +12,7 @@ const router = express.Router();
 router.get("/", getAllComplaints);
 router.post("/", createComplaint);
 
-router.put("/:id/resolve", auth, resolveComplaint);
+router.put("/:id", auth, resolveComplaint);
 router.delete("/:id", auth, deleteComplaint);
 
 export default router;

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="header">
+  <h1>Complaint / Issue Tracker</h1>
+  <div>
+    <button onclick="goToUser()">User Panel</button>
+    <button>Admin Panel</button>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Admin Dashboard</h2>
+
+  <div class="stats">
+    <div class="stat-card">
+      <p>Total Complaints</p>
+      <h3 id="total">0</h3>
+    </div>
+    <div class="stat-card">
+      <p>Pending</p>
+      <h3 id="pending">0</h3>
+    </div>
+    <div class="stat-card">
+      <p>Resolved</p>
+      <h3 id="resolved">0</h3>
+    </div>
+    <div class="stat-card">
+      <p>Rejected</p>
+      <h3 id="rejected">0</h3>
+    </div>
+  </div>
+
+  <div id="complaintList"></div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

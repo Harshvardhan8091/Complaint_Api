@@ -4,6 +4,7 @@ import logger from "./middleware/logger.middleware.js";
 
 const app = express();
 
+app.use(express.static("public"));
 app.use(express.json());
 app.use(logger);
 

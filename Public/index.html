@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Complaint</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="header">
+  <h1>Video Game Complaint System</h1>
+  <div>
+    <button>User Panel</button>
+    <button onclick="goToAdmin()">Admin Panel</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="form-box">
+    <h2>Submit Complaint</h2>
+
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="subject" placeholder="Game / Issue Subject">
+    <textarea id="description" placeholder="Describe your issue"></textarea>
+
+    <button class="primary" onclick="submitComplaint()">Submit Complaint</button>
+    <p id="message"></p>
+  </div>
+
+  
+
+</div>
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

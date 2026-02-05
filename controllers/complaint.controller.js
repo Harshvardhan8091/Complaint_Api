@@ -6,14 +6,18 @@ export const getAllComplaints = (req, res) => {
 };
 
 export const createComplaint = (req, res) => {
-  const { title, description } = req.body;
+  const { name, email, subject, description } = req.body;
+
 
   const newComplaint = {
-    id: idCounter++,
-    title,
-    description,
-    status: "open"
-  };
+  id: idCounter++,
+  name,
+  email,
+  subject,
+  description,
+  status: "pending"
+};
+
 
   complaints.push(newComplaint);
   res.status(201).json(newComplaint);
@@ -21,6 +25,7 @@ export const createComplaint = (req, res) => {
 
 export const resolveComplaint = (req, res) => {
   const id = Number(req.params.id);
+  const status = req.body.status;
 
   const complaint = complaints.find(c => c.id === id);
 
@@ -28,7 +33,7 @@ export const resolveComplaint = (req, res) => {
     return res.status(404).json({ message: "Complaint not found" });
   }
 
-  complaint.status = "resolved";
+  complaint.status = status;
   res.json(complaint);
 };
 
@@ -43,4 +48,15 @@ export const deleteComplaint = (req, res) => {
 
   complaints.splice(index, 1);
   res.json({ message: "Complaint deleted" });
+};
+export const getComplaintById = (req, res) => {
+  const id = Number(req.params.id);
+
+  const complaint = complaints.find(c => c.id === id);
+
+  if (!complaint) {
+    return res.status(404).json({ message: "Complaint not found" });
+  }
+
+  res.json(complaint);
 };
